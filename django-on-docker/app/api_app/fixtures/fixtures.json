@@ -1,0 +1,46 @@
+[
+    {
+        "model": "api_app.printer",
+        "pk": 1,
+        "fields": {
+            "name": "Kitchen Printer",
+            "api_key": "1234567890",
+            "check_type": "kitchen",
+            "point_id": 1
+        }
+    },
+    {
+        "model": "api_app.printer",
+        "pk": 2,
+        "fields": {
+            "name": "Client Printer",
+            "api_key": "0987654321",
+            "check_type": "client",
+            "point_id": 2
+        }
+    },
+    {
+        "model": "api_app.check",
+        "pk": 1,
+        "fields": {
+            "printer": 1,
+            "check_type": "kitchen",
+            "order": {"id": 1,
+                "items": [{"name": "Pizza", "price": 10.99}], "total": 10.99},
+            "status": "new",
+            "pdf_file": null
+        }
+    },
+    {
+        "model": "api_app.check",
+        "pk": 2,
+        "fields": {
+            "printer": 2,
+            "check_type": "client",
+            "order": {"id": 2,
+                "items": [{"name": "Burger", "price": 8.99}], "total": 8.99},
+            "status": "printed",
+            "pdf_file": "pdfs/check_2.pdf"
+        }
+    }
+]
